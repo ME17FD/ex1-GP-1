@@ -6,7 +6,20 @@ public class FacteursPremiers {
     public List<Integer> primesgenerator(int limite) {
         List<Integer> primes = new ArrayList<>();
 
-       
+        for (int num = 2; num <= limite; num++) {
+            boolean isPrime = true;
+
+            for (int p : primes) {
+                if (num % p == 0) {
+                    isPrime = false;
+                    break; 
+                }
+            }
+
+            if (isPrime) {
+                primes.add(num);
+            }
+        }
 
         return primes;
     }
