@@ -4,7 +4,7 @@ import java.util.List;
 public class FacteursPremiers {
 
     public List<Integer> primesgenerator(int limite) {
-        List<Integer> primes = List.of(2);
+        List<Integer> primes = new ArrayList<>();
 
        
 
@@ -13,11 +13,12 @@ public class FacteursPremiers {
     public List<Integer> generate(int limite){
         List<Integer> primes = primesgenerator(limite);
         List<Integer> resultat = new ArrayList<>();
+        int climite = limite;
         for (int i = 0; i < limite; i++) {
             for (int elem : primes) {
-                if(limite%elem==0){
+                if(climite%elem==0){
                     resultat.add(elem);
-                    limite = limite/elem;
+                    climite = climite/elem;
                     break;
                 }
             }
